@@ -25,6 +25,8 @@ end
 
 Base.size(rhs::RHS, dim...) = size(rhs.X, dim...)
 
+Base.:*(rhs::RHS, β) = rhs.X * β
+
 """
     β, v = ML_βv(y, rhs)
 

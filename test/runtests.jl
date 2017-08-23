@@ -33,6 +33,7 @@ alt_loglikelihood(y, X, β, v) = sum(logpdf.(Normal(0, √v), y.-(X*β)))
         @test size(rhs) == size(X)
         @test size(rhs, 1) == size(X, 1)
         @test size(rhs, 2) == size(X, 2)
+        @test rhs * β == X * β
     end
 end
 
